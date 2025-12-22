@@ -20,7 +20,7 @@ export default function Navbar() {
             
             {/* Logo */}
             <img
-              src="/02.png"
+              src="/photos/02.png"
               alt="Logo"
               className="h-8 w-auto filter invert"
             />

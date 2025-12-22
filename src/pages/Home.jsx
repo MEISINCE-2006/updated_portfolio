@@ -9,7 +9,7 @@ export default function Home() {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.6 }}
-        src="/01.jpg"
+        src="/photos/01.jpg"
         alt="Profile Photo"
         className="w-32 h-32 rounded-full mb-6 shadow-2xl object-cover"
       />
