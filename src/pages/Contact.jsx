@@ -1,38 +1,70 @@
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 export default function Contact() {
+  const formRef = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_252u6ws",
+        "template_hagvz22",
+        formRef.current,
+        "-2Ccle-4p-6Mf1kuK"
+      )
+      .then(
+        () => {
+          alert("Message sent successfully!");
+          formRef.current.reset();
+        },
+        () => {
+          alert("Failed to send message. Try again later.");
+        }
+      );
+  };
+
   return (
     <section id="contact" className="page pt-24">
       <h2 className="title text-center text-4xl font-bold mb-10">
         Contact
       </h2>
 
-      <form className="flex flex-col gap-4 w-full max-w-md mx-auto">
+      <form
+        ref={formRef}
+        onSubmit={sendEmail}
+        className="flex flex-col gap-4 w-full max-w-md mx-auto"
+      >
         <input
           className="card"
+          name="name"
           placeholder="Name"
           type="text"
           required
-          minLength={2}
-          maxLength={50}
         />
+
         <input
           className="card"
+          name="email"
           placeholder="Email"
           type="email"
           required
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
         />
+
         <textarea
           className="card"
+          name="message"
           placeholder="Message"
           rows={4}
           required
-          minLength={10}
-          maxLength={500}
         />
-        <button className="btn" type="submit">Send Message</button>
+
+        <button className="btn" type="submit">
+          Send Message
+        </button>
       </form>
 
       <div className="mt-8 opacity-90 text-center space-y-3 text-lg">
