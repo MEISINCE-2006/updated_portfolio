@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
-import Projects from "./pages/Projects";
+import Projects from "./pages/Products";
 import Certificates from "./pages/Certificates";
 import Contact from "./pages/Contact";
 
