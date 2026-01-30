@@ -31,7 +31,7 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.path}
-                  className="font-medium  text-white  text-xl transition hover:text-purple-400"
+                  className="font-medium  text-white  text-xl transition hover:text-purple-400 hover:underline"
                 >
                   {link.name}
                 </a>

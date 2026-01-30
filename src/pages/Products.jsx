@@ -1,6 +1,7 @@
 import ageImg from "../assets/photos/age.png";
 import letterImg from "../assets/photos/letter.png";
 import bmiImg from "../assets/photos/bmi.png";
+import cardvalidImg from "../assets/photos/cardvalid.png";
 
 const products = [
   {
@@ -26,7 +27,16 @@ const products = [
     image: bmiImg,
     liveDemo: "https://meibmicalculator.netlify.app/",
     github: "https://github.com/MEISINCE-2006/bmicalculator.git"
-  }
+  },
+  {
+    name: "Card Validator",
+    description:
+      "A robust tool for validating credit card numbers using the Luhn algorithm. Users can enter card details to verify validity, identify the card type (Visa, MasterCard, etc.), and ensure secure transactions. Built with HTML, CSS, and JavaScript, it provides instant feedback and helps prevent errors in payment processing.",
+    image: cardvalidImg,
+    liveDemo: "https://cardvalid.netlify.app/",
+    github: "https://github.com/MEISINCE-2006/cardvalidation.git"
+  },
+  
 ];
 
 export default function Products() {
