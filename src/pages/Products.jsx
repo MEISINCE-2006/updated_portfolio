@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import ageImg from "../assets/photos/age.png";
 import letterImg from "../assets/photos/letter.png";
 import bmiImg from "../assets/photos/bmi.png";
@@ -36,54 +37,62 @@ const products = [
     liveDemo: "https://cardvalid.netlify.app/",
     github: "https://github.com/MEISINCE-2006/cardvalidation.git"
   },
-  
+
 ];
 
 export default function Products() {
   return (
-    <section id="products" className="page pt-24">
-      <h2 className="text-center text-4xl font-bold mb-14 text-white">
-        Products
-      </h2>
+    <section id="products" className="page py-24">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
+        <h2 className="title">Featured Projects</h2>
+        <p className="text-slate-400">Some of my best work</p>
+      </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-12">
-        {products.map((p) => (
-          <div
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        {products.map((p, index) => (
+          <motion.div
             key={p.name}
-            className="
-              bg-gradient-to-br from-[#0a0f1c] via-[#0f1b2e] to-[#060b16]
-              rounded-3xl p-8 shadow-[0_0_60px_rgba(0,140,255,0.15)]
-              flex flex-col text-white
-            "
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+            className="card flex flex-col group"
           >
-            <img
-              src={p.image}
-              alt={p.name}
-              className="w-full h-48 object-contain mb-6"
-            />
+            <div className="overflow-hidden rounded-xl mb-6 border border-white/5">
+              <img
+                src={p.image}
+                alt={p.name}
+                className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
 
-            <h3 className="text-2xl font-semibold mb-4 text-center">
+            <h3 className="text-2xl font-bold mb-4 font-heading group-hover:text-primary transition-colors">
               {p.name}
             </h3>
 
-            <p className="text-base leading-relaxed text-gray-200 text-justify mb-6">
+            <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
               {p.description}
             </p>
 
-            <div className="flex gap-6 justify-center">
-              <a href={p.liveDemo} target="_blank" rel="noreferrer">
-                <button className="px-6 py-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 font-semibold hover:scale-105 transition">
+            <div className="flex gap-4 mt-auto">
+              <a href={p.liveDemo} target="_blank" rel="noreferrer" className="flex-1">
+                <button className="w-full py-2.5 rounded-lg bg-primary/20 text-primary border border-primary/20 font-semibold hover:bg-primary hover:text-white transition-all duration-300">
                   Live Demo
                 </button>
               </a>
 
-              <a href={p.github} target="_blank" rel="noreferrer">
-                <button className="px-6 py-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 font-semibold hover:scale-105 transition">
+              <a href={p.github} target="_blank" rel="noreferrer" className="flex-1">
+                <button className="w-full py-2.5 rounded-lg bg-white/5 text-slate-300 border border-white/10 font-semibold hover:bg-white/10 hover:text-white transition-all duration-300">
                   GitHub
                 </button>
               </a>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

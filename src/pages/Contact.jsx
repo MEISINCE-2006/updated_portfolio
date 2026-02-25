@@ -43,9 +43,9 @@ export default function Contact() {
         onSubmit={sendEmail}
         className="flex flex-col gap-4 w-full max-w-md mx-auto relative"
       >
-        <input className="card" name="name" placeholder="Name" required />
-        <input className="card" name="email" placeholder="Email" required />
-        <textarea className="card" name="message" placeholder="Message" rows={4} required />
+        <input className="card bg-white/5 border border-white/10 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all p-4 placeholder-slate-500" name="name" placeholder="Name" required />
+        <input className="card bg-white/5 border border-white/10 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all p-4 placeholder-slate-500" name="email" placeholder="Email" required />
+        <textarea className="card bg-white/5 border border-white/10 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all p-4 placeholder-slate-500" name="message" placeholder="Message" rows={4} required />
 
         <motion.button
           className="btn"
