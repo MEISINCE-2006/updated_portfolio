@@ -9,34 +9,22 @@ import {
   FaLinux,
   FaDocker,
   FaInfinity,
-  FaFigma,
-  FaReact,
-  FaNodeJs,
-  FaPython,
 } from "react-icons/fa";
-import { SiKubernetes, SiJenkins, SiMysql, SiMongodb, SiExpress, SiVite } from "react-icons/si";
+import { SiKubernetes, SiJenkins, SiMysql } from "react-icons/si";
 
-// Combined skills from both HEAD and incoming changes without duplicates
 const skills = [
   { name: "HTML", icon: <FaHtml5 />, color: "text-orange-500" },
   { name: "CSS", icon: <FaCss3Alt />, color: "text-blue-500" },
   { name: "JavaScript", icon: <FaJs />, color: "text-yellow-400" },
-  { name: "React", icon: <FaReact />, color: "text-cyan-400" },
   { name: "Git VCS", icon: <FaGitAlt />, color: "text-orange-600" },
   { name: "Java", icon: <FaJava />, color: "text-red-500" },
-  { name: "Python", icon: <FaPython />, color: "text-yellow-600" },
-  { name: "Node.js", icon: <FaNodeJs />, color: "text-green-600" },
-  { name: "Express", icon: <SiExpress />, color: "text-gray-400" },
-  { name: "MySQL", icon: <SiMysql />, color: "text-blue-300" },
-  { name: "MongoDB", icon: <SiMongodb />, color: "text-green-500" },
   { name: "AWS", icon: <FaAws />, color: "text-orange-400" },
   { name: "Linux", icon: <FaLinux />, color: "text-slate-300" },
   { name: "Docker", icon: <FaDocker />, color: "text-blue-400" },
   { name: "Kubernetes", icon: <SiKubernetes />, color: "text-blue-500" },
   { name: "Jenkins", icon: <SiJenkins />, color: "text-red-400" },
   { name: "CI/CD", icon: <FaInfinity />, color: "text-cyan-400" },
-  { name: "Figma", icon: <FaFigma />, color: "text-purple-400" },
-  { name: "Vite", icon: <SiVite />, color: "text-purple-500" },
+  { name: "MySQL", icon: <SiMysql />, color: "text-blue-300" },
 ];
 
 const containerVariants = {
