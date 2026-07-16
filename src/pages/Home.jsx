@@ -58,7 +58,7 @@ export default function Home() {
           download="MEIAKASH.pdf"
           className="flex items-center gap-3 text-lg px-6 py-2.5 rounded-full border border-white/20 hover:bg-white/10 text-white font-heading font-semibold tracking-wide transition-all duration-300 group"
         >
-          <FaDownload className="group-hover:animate-bounce" /> Download CV
+          <FaDownload className="group-hover:animate-bounce" /> Download Resume
         </a>
       </motion.div>
 
