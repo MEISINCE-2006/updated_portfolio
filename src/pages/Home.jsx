@@ -35,7 +35,12 @@ export default function Home() {
         transition={{ delay: 0.3 }}
         className="max-w-2xl text-slate-400 mb-10 text-center text-lg md:text-xl leading-relaxed"
       >
+<<<<<<< HEAD
         A Final Year student who aspires to become a <span className="text-primary font-semibold">Java Developer</span> with an interest in web development and creative software solutions. Strong foundation in Java, OOP concepts, web development. To develop scalable applications and to be a part of meaningful development projects.
+=======
+        Pre-final-year student aspiring to become a <span className="text-primary font-semibold">MERN Stack Engineer</span> with a focus on
+        Full Stack Web Development and Innovative Solution Development.
+>>>>>>> e064ca37859a37e5a3c3037de4f6fb3ae0a767fa
       </motion.p>
 
       <motion.div
