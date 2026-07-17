@@ -57,7 +57,7 @@ export default function Home() {
           <FaEye className="group-hover:scale-110 transition-transform" /> View Resume
         </button>
         <a
-          href={resumePath}
+          href="/mei-resume.pdf"
           download="MEI_RESUME.pdf"
           className="flex items-center gap-3 text-lg px-6 py-2.5 rounded-full border border-white/20 hover:bg-white/10 text-white font-heading font-semibold tracking-wide transition-all duration-300 group"
         >
