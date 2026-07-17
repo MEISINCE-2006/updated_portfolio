@@ -5,6 +5,9 @@ import { FaWhatsapp, FaInstagram, FaLinkedin, FaGithub, FaDownload, FaEye } from
 export default function Home() {
   const [showResume, setShowResume] = useState(false);
 
+  // Standardized file path from your public folder
+  const resumePath = "/mei-resume.pdf";
+
   return (
     <section id="home" className="page flex flex-col items-center justify-center pt-32 min-h-screen">
 
@@ -54,8 +57,8 @@ export default function Home() {
           <FaEye className="group-hover:scale-110 transition-transform" /> View Resume
         </button>
         <a
-          href="/MEIAKASH.pdf"
-          download="MEIAKASH.pdf"
+          href={resumePath}
+          download="MEI_RESUME.pdf"
           className="flex items-center gap-3 text-lg px-6 py-2.5 rounded-full border border-white/20 hover:bg-white/10 text-white font-heading font-semibold tracking-wide transition-all duration-300 group"
         >
           <FaDownload className="group-hover:animate-bounce" /> Download Resume
@@ -65,10 +68,10 @@ export default function Home() {
       {/* SOCIAL ICONS */}
       <div className="flex gap-6 flex-wrap justify-center">
         {[
-          { icon: FaWhatsapp, href: "https://wa.me/919342943337", color: "hover:text-green-400" },
-          { icon: FaInstagram, href: "https://www.instagram.com/mei_akash_2006?igsh=bXZ4ZGk1MzA5bWlt", color: "hover:text-pink-400" },
-          { icon: FaLinkedin, href: "https://www.linkedin.com/in/mei-akash-b-4b7b7a294/", color: "hover:text-blue-400" },
-          { icon: FaGithub, href: "https://github.com/MEISINCE-2006", color: "hover:text-gray-300" }
+          { icon: FaWhatsapp, href: "https://wa.me", color: "hover:text-green-400" },
+          { icon: FaInstagram, href: "https://instagram.com", color: "hover:text-pink-400" },
+          { icon: FaLinkedin, href: "https://linkedin.com", color: "hover:text-blue-400" },
+          { icon: FaGithub, href: "https://github.com", color: "hover:text-gray-300" }
         ].map((social, index) => (
           <motion.a
             key={index}
@@ -98,13 +101,20 @@ export default function Home() {
                 ✕ Close
               </button>
             </div>
-            {/* PDF View */}
+            {/* PDF View with Fallback text for unsupported browsers */}
             <div className="flex-1 bg-slate-800">
               <iframe
-                src="/MEIAKASH.pdf"
+                src={`${resumePath}#toolbar=0`} 
                 className="w-full h-full border-none"
                 title="Resume"
-              ></iframe>
+              >
+                <p className="text-white p-6 text-center">
+                  Your browser does not support embedded PDFs. 
+                  <a href={resumePath} className="text-primary underline ml-1" download>
+                    Download instead
+                  </a>.
+                </p>
+              </iframe>
             </div>
           </div>
         </div>
