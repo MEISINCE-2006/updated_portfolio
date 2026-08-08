@@ -6,7 +6,7 @@ export default function Home() {
   const [showResume, setShowResume] = useState(false);
 
   // Standardized file path from your public folder
-  const resumePath = "/mei-resume.pdf";
+  const resumePath = "/MEIAKASH res.pdf";
 
   return (
     <section id="home" className="page flex flex-col items-center justify-center pt-32 min-h-screen">
@@ -104,12 +104,12 @@ export default function Home() {
             {/* PDF View with Fallback text for unsupported browsers */}
             <div className="flex-1 bg-slate-800">
               <iframe
-                src={`${resumePath}#toolbar=0`} 
+                src={`${resumePath}#toolbar=0`}
                 className="w-full h-full border-none"
                 title="Resume"
               >
                 <p className="text-white p-6 text-center">
-                  Your browser does not support embedded PDFs. 
+                  Your browser does not support embedded PDFs.
                   <a href={resumePath} className="text-primary underline ml-1" download>
                     Download instead
                   </a>.
