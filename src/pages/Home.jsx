@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaWhatsapp, FaInstagram, FaLinkedin, FaGithub, FaDownload, FaEye } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaLinkedin, FaGithub, FaDownload, FaEye, FaExternalLinkAlt } from "react-icons/fa";
 
 export default function Home() {
   const [showResume, setShowResume] = useState(false);
 
   // Standardized file path from your public folder
-  const resumePath = "/MEIAKASH res.pdf";
+  const resumePath = "/meiakash_cse_nec.pdf";
 
   return (
     <section id="home" className="page flex flex-col items-center justify-center pt-32 min-h-screen">
@@ -57,8 +57,8 @@ export default function Home() {
           <FaEye className="group-hover:scale-110 transition-transform" /> View Resume
         </button>
         <a
-          href="/mei-resume.pdf"
-          download="MEI_RESUME.pdf"
+          href={resumePath}
+          download="meiakash_cse_nec.pdf"
           className="flex items-center gap-3 text-lg px-6 py-2.5 rounded-full border border-white/20 hover:bg-white/10 text-white font-heading font-semibold tracking-wide transition-all duration-300 group"
         >
           <FaDownload className="group-hover:animate-bounce" /> Download Resume
@@ -92,28 +92,54 @@ export default function Home() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 animate-fade-in">
           <div className="relative w-full max-w-4xl h-[85vh] bg-slate-900 border border-white/10 rounded-3xl overflow-hidden flex flex-col shadow-2xl">
             {/* Header */}
-            <div className="flex justify-between items-center px-6 py-4 border-b border-white/10 bg-slate-950">
-              <h3 className="text-xl font-semibold text-white font-heading">Resume Viewer</h3>
-              <button
-                onClick={() => setShowResume(false)}
-                className="text-slate-400 hover:text-white transition-colors px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 font-sans text-sm font-semibold border border-white/5"
-              >
-                ✕ Close
-              </button>
+            <div className="flex justify-between items-center px-6 py-4 border-b border-white/10 bg-slate-950 flex-wrap gap-2">
+              <h3 className="text-xl font-semibold text-white font-heading flex items-center gap-2">
+                <FaEye className="text-primary" /> Meiakash Resume
+              </h3>
+              <div className="flex items-center gap-2">
+                <a
+                  href={resumePath}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-300 hover:text-white transition-colors px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 text-xs sm:text-sm font-semibold border border-white/5 flex items-center gap-2"
+                  title="Open PDF in new tab"
+                >
+                  <FaExternalLinkAlt className="text-xs" /> Open in New Tab
+                </a>
+                <a
+                  href={resumePath}
+                  download="meiakash_cse_nec.pdf"
+                  className="text-slate-300 hover:text-white transition-colors px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 text-xs sm:text-sm font-semibold border border-white/5 flex items-center gap-2"
+                  title="Download PDF"
+                >
+                  <FaDownload className="text-xs" /> Download
+                </a>
+                <button
+                  onClick={() => setShowResume(false)}
+                  className="text-slate-400 hover:text-white transition-colors px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 text-xs sm:text-sm font-semibold border border-white/5 cursor-pointer ml-1"
+                >
+                  ✕ Close
+                </button>
+              </div>
             </div>
             {/* PDF View with Fallback text for unsupported browsers */}
             <div className="flex-1 bg-slate-800">
               <iframe
                 src={`${resumePath}#toolbar=0`}
                 className="w-full h-full border-none"
-                title="Resume"
+                title="Meiakash Resume"
               >
-                <p className="text-white p-6 text-center">
-                  Your browser does not support embedded PDFs.
-                  <a href={resumePath} className="text-primary underline ml-1" download>
-                    Download instead
-                  </a>.
-                </p>
+                <div className="text-white p-6 text-center flex flex-col items-center justify-center h-full gap-4">
+                  <p>Your browser does not support embedded PDFs.</p>
+                  <a
+                    href={resumePath}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn flex items-center gap-2"
+                  >
+                    <FaExternalLinkAlt /> Open meiakash_cse_nec.pdf directly
+                  </a>
+                </div>
               </iframe>
             </div>
           </div>
